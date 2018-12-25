@@ -1,5 +1,6 @@
 module.exports = (client, options) => {
   const Discord = require("discord.js");
+  const path = require('path');
   class ImageLogger {
     constructor(client, options) {
       this.imageExtensions = new Set(require('./image-extensions.json').extensions);
