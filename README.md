@@ -3,7 +3,8 @@
     <a href="https://nodei.co/npm/discord.js-image-logger
 /"><img src="https://nodei.co/npm/discord.js-image-logger.png?downloads=true&stars=true" alt="NPM info" /></a>
   </p>
-</div>
+</div>  
+
 # Discord.js Image Logger
 A simple addon for Discord.js bots to log images sent in a specified channel, channels or the entire server. It can log either with RichEmbeds or with the link to the file.
 
@@ -12,7 +13,8 @@ A simple addon for Discord.js bots to log images sent in a specified channel, ch
 That's it!
 
 # DIL Options
-A full list of options and their defaults you can pass in `new <DIL>(<Client>, { options });`.
+A full list of options and their defaults you can pass in `new <DIL>(<Client>, { options });`.  
+
 | Option | Type | Description | Default |  
 | --- | --- | --- | --- |
 | method | String | The default logging of image attachments. | "link" |
