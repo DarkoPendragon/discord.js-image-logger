@@ -1,20 +1,17 @@
+const Discord = require("discord.js");
+const path = require("path");
 module.exports = (client, options) => {
-  const Discord = require("discord.js");
-  class ImageLogger {
-    constructor(client, options) {
-      this.imageExtensions = new Set(require('./image-extensions.json').extensions);
-      this.method = (options && options.method) || "link";
-      this.serverWide = (options && typeof options.serverWide !== 'undefined' ? options && options.serverWide : false);
-      this.channels = (options && options.channels) || [];
-      this.logChannel = (options && options.logChannel) || "image-logs";
-      this.logging = (options && typeof options.logging !== 'undefined' ? options && options.logging : false);
-    };
-
-    isImage(file_path) {
-      return this.imageExtensions.has(path.extname(file_path).slice(1).toLowerCase());
-    };
+  const DIL = {
+    imageExtensions: new Set(require('./image-extensions.json').extensions),
+    method: (options && options.method) || "link",
+    serverWide: (options && typeof options.serverWide !== 'undefined' ? options && options.serverWide : false),
+    channels: (options && options.channels) || [],
+    logChannel: (options && options.logChannel) || "image-logs",
+    logging: (options && typeof options.logging !== 'undefined' ? options && options.logging : false)
   };
-  const DIL = new ImageLogger(client, options);
+  DIL.isImage = (file_path) => {
+    return DIL.imageExtensions.has(path.extname(file_path).slice(1).toLowerCase());
+  };
 
   client.on("ready", () => {
     console.log(`-----------------------------\nDiscord Image Logger Online\n-----------------------------`);

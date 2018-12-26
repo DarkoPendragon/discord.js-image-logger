@@ -1,6 +1,6 @@
 {
   "name": "discord.js-image-logger",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Logs images sent in certain channels or an entire server with a Discord.js bot.",
   "main": "index.js",
   "scripts": {
