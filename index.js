@@ -35,7 +35,7 @@ module.exports = (client, options) => {
     };
 
     if (DIL.method === "link") {
-      const links = [];
+      var links = [];
       let index = 0;
       attachments.forEach(e => {
         index++;
@@ -55,6 +55,21 @@ module.exports = (client, options) => {
       logchan.send({
         embed
       }).catch(console.log);
+    } else if (DIL.method == "image") {
+      var links = []
+      let index = 0;
+      attachments.forEach(e => {
+        links.push(`e.url`);
+      });
+      try {
+        logChannel.send(`${attachments.length} Image(s) Send In #${message.channel.id} by <@${message.author.id}>`,{files: links})
+      } catch (e) {
+        try {
+          logChannel.send(`\`Failed Upload Attempt - File Size Too Big?\`\n${attachments.size} Image(s) Send In #${message.channel.id} by <@${message.author.id}>\n\`\`\`\n${links}\n\`\`\``)
+        } catch (e) {
+          console.error(e);
+        };
+      };
     };
   });
 };

@@ -36,7 +36,7 @@ const DIL = require("discord.js-image-logger");
 const client = new Discord.Client();
 // Start the module with some custom options.
 DIL(client, {
-  method: "embed",
+  method: "embed", // can be "embed" "link" or "image"
   logChannel: "images",
   channels: ["some-channel","453502285318848512","another-channel"]
 })
